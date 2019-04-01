@@ -28,5 +28,3 @@ chown -R sabnzbd:sabnzbd /output
 chown -R sabnzbd:sabnzbd /config/sabnzbd
 
 chmod -R 755 /config/sabnzbd
-
-systemctl restart sabnzbd.service
