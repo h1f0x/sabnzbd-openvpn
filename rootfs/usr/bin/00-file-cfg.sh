@@ -23,8 +23,13 @@ if [ ! -f /config/sabnzbd/config.ini ]; then
     cp -r /defaults/config/sabnzbd/config.ini /config/sabnzbd/config.ini
 fi
 
-
 chown -R sabnzbd:sabnzbd /output
 chown -R sabnzbd:sabnzbd /config/sabnzbd
+chown -R sabnzbd:sabnzbd /mnt/incomplete/sabnzbd-openvpn
+chown -R sabnzbd:sabnzbd /mnt/downloads/sabnzbd-openvpn
+chown -R sabnzbd:sabnzbd /mnt/nzb
 
+chmod -R 755 /mnt/incomplete/sabnzbd-openvpn
+chmod -R 755 /mnt/downloads/sabnzbd-openvpn
+chmod -R 777 /mnt/nzb
 chmod -R 755 /config/sabnzbd
