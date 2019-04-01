@@ -1,0 +1,15 @@
+[Unit]
+Description=SABnzbd Daemon
+Documentation=http://sabnzbd.org/wiki/
+After=network.target prepare-config.service
+
+[Service]
+User=sabnzbd
+Group=sabnzbd
+Type=simple
+ExecStart=/usr/bin/python /usr/share/sabnzbd/SABnzbd.py --logging=1 --browser=0 --config-file=/config/sabnzbd/config.ini
+WorkingDirectory=/usr/share/sabnzbd
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
