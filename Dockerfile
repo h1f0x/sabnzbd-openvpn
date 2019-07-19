@@ -18,9 +18,14 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/config" ]
 VOLUME [ "/output" ]
 
+RUN sysctl net.ipv6.conf.all.disable_ipv6
+RUN sysctl net.ipv6.conf.default.disable_ipv6
+
+RUN yum clean all && rm -rf /var/cache/yum/*
+
 # OpenVPN
-RUN yum install -y epel-release
 RUN yum update -y
+RUN yum install -y epel-release
 RUN yum install -y openvpn
 
 # SABnzbd
