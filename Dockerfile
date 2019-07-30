@@ -15,12 +15,6 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 #VOLUME [ "/sys/fs/cgroup" ]
 
-VOLUME [ "/config" ]
-VOLUME [ "/output" ]
-
-RUN sysctl net.ipv6.conf.all.disable_ipv6
-RUN sysctl net.ipv6.conf.default.disable_ipv6
-
 RUN yum clean all && rm -rf /var/cache/yum/*
 
 # OpenVPN
