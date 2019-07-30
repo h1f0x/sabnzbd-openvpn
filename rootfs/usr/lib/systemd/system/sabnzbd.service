@@ -1,11 +1,9 @@
 [Unit]
 Description=SABnzbd Daemon
 Documentation=http://sabnzbd.org/wiki/
-After=network.target prepare-config.service
+After=network.target openvpn-own-client.service
 
 [Service]
-User=sabnzbd
-Group=sabnzbd
 Type=simple
 ExecStart=/usr/bin/python /usr/share/sabnzbd/SABnzbd.py --logging=1 --browser=0 --config-file=/config/sabnzbd/config.ini
 WorkingDirectory=/usr/share/sabnzbd

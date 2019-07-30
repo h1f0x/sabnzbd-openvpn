@@ -8,5 +8,4 @@ KillMode=none
 ExecStart=/usr/bin/00-file-cfg.sh
 
 [Install]
-RequiredBy=openvpn-own-client.service sabnzbd.service
 WantedBy=default.target
